@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorCardviewBackground"
+    tools:context=".ui.neighbour_list.DetailNeighbourActivity" >
+
+    <ImageView
+        android:id="@+id/detail_Iv_NeighbourAvatar"
+        android:layout_width="0dp"
+        android:layout_height="280dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+     <ImageView
+        android:id="@+id/detail_Iv_BackArrow"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintStart_toStartOf="@+id/detail_Iv_NeighbourAvatar"
+        app:layout_constraintTop_toTopOf="@+id/detail_Iv_NeighbourAvatar"
+        app:srcCompat="@drawable/ic_back_arrow_white_24dp" />
+
+    <TextView
+        android:id="@+id/detail_Tv_UserName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginBottom="24dp"
+        android:text="TextView"
+        android:textColor="#FFFFFF"
+        android:textSize="36sp"
+        app:layout_constraintBottom_toBottomOf="@+id/detail_Iv_NeighbourAvatar"
+        app:layout_constraintStart_toStartOf="@+id/detail_Iv_NeighbourAvatar" />
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/detail_Fab_Favorite"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="24dp"
+        android:clickable="true"
+        app:backgroundTint="#FFFFFF"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="@+id/detail_Iv_NeighbourAvatar"
+        app:layout_constraintTop_toBottomOf="@+id/detail_Iv_NeighbourAvatar"
+        app:srcCompat="@drawable/ic_star_white_24dp" />
+
+        <!--> Give alignement of group of Elements <-->
+        <LinearLayout
+            android:layout_marginTop="282dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:paddingLeft="12dp"
+            android:paddingRight="12dp">
+
+            <android.support.v7.widget.CardView
+                    android:id="@+id/detail_card"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="0dp"
+                    android:layout_marginTop="@dimen/card_spacing"
+                    android:layout_marginRight="0dp"
+                    app:cardCornerRadius="4dp">
+                    <!-->android:minHeight="@dimen/height_min_big_card"<-->
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <TextView
+                            android:id="@+id/detail_Tv_Name"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="detail_tv_name"
+                            android:layout_margin="@dimen/text_margin"
+                            android:textColor="#000000"
+                            android:textSize="24sp"/>
+
+                        <ImageView
+                            android:id="@+id/detail_MapMarker"
+                            android:layout_width="@dimen/icon_detail_wsize"
+                            android:layout_height="@dimen/icon_detail_wsize"
+                            android:layout_below="@id/detail_Tv_Name"
+                            android:adjustViewBounds="false"
+                            android:cropToPadding="false"
+                            android:layout_marginLeft="@dimen/icon_default_left_margin"
+                            android:tint="@color/colorAccent"
+                            app:srcCompat="@drawable/android_map_marker_icon_50x50" />
+
+                        <TextView
+                            android:id="@+id/detail_Tv_Address"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/detail_Tv_Name"
+                            android:layout_marginLeft="@dimen/text_cardview_left_margin"
+                            android:layout_marginBottom="@dimen/text_cardview_bottom_margin"
+                            android:text="detail_Tv_address"/>
+
+                        <ImageView
+                            android:id="@+id/detail_Iv_Phone"
+                            android:layout_width="@dimen/icon_detail_wsize"
+                            android:layout_height="@dimen/icon_detail_wsize"
+                            android:layout_below="@id/detail_Tv_Address"
+                            android:layout_marginLeft="@dimen/icon_default_left_margin"
+                            android:tint="@color/colorAccent"
+                            app:srcCompat="@android:drawable/stat_sys_phone_call"/>
+
+                        <TextView
+                            android:id="@+id/detail_Tv_Phone"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/detail_Tv_Address"
+                            android:layout_marginLeft="@dimen/text_cardview_left_margin"
+                            android:layout_marginBottom="@dimen/text_cardview_bottom_margin"
+                            android:text="tv_tel"/>
+
+                        <ImageView
+                            android:id="@+id/imageView3"
+                            android:layout_width="@dimen/icon_detail_wsize"
+                            android:layout_height="@dimen/icon_detail_wsize"
+                            android:layout_below="@id/detail_Tv_Phone"
+                            android:layout_marginLeft="@dimen/icon_default_left_margin"
+                            android:tint="@color/colorAccent"
+                            app:srcCompat="@drawable/icons8_globe_50" />
+
+                        <TextView
+                            android:id="@+id/detail_Tv_Web"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/detail_Tv_Phone"
+                            android:layout_marginLeft="@dimen/text_cardview_left_margin"
+                            android:layout_marginBottom="@dimen/text_cardview_bottom_margin"
+                            android:text="tv_tel"/>
+
+                    </RelativeLayout>
+
+            </android.support.v7.widget.CardView>
+
+            <android.support.v7.widget.CardView
+                android:id="@+id/detail_card_aboutme"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/card_spacing">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/detail_Tv_LabelAboutme"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="A propos de moi"
+                        android:layout_margin="@dimen/text_margin"
+                        android:textColor="#000000"
+                        android:textSize="22sp"/>
+
+                    <TextView
+                        android:id="@+id/detail_Tv_Aboutme"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/icon_default_left_margin"
+                        android:layout_marginRight="12dp"
+                        android:layout_marginBottom="@dimen/text_cardview_bottom_margin"
+                        android:text="A Propos de moi"/>
+
+                </LinearLayout>
+
+            </android.support.v7.widget.CardView>
+
+        </LinearLayout>
+
+</android.support.constraint.ConstraintLayout>
