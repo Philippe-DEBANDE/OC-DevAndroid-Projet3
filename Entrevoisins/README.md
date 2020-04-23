@@ -12,7 +12,7 @@ A suivre vous trouverez les instructions pour la récupération, la compilation 
 * Ou encore cloner le dépôt en local.\
  Au choix en utilisant cette adresse ---> [Lien Entrevoisins](https://github.com/Philippe-DEBANDE/OC-DevAndroid-Projet3.git)
 
-![Screenshot_Github](img/GitHub.png)
+![Screenshot_Github](img/Github.png)
 
 
 
