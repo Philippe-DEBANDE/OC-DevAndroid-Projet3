@@ -13,7 +13,6 @@ import com.openclassrooms.entrevoisins.model.Neighbour;
 import com.openclassrooms.entrevoisins.service.NeighbourApiService;
 import com.openclassrooms.entrevoisins.ui.neighbour_list.ListNeighbourActivity;
 
-import org.junit.Assert;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -46,6 +45,8 @@ public class NeighbourDetailTest {
 
         ViewInteraction recyclerList = onView( allOf(withId(R.id.list_neighbours),isDisplayed()));
         recyclerList.perform(RecyclerViewActions.actionOnItemAtPosition(position, click()));
+        // If click is not perform the test fail
+        onView(withId(R.id.detail_Tv_Name)).check(matches(isDisplayed()));
 
     }
 
@@ -53,6 +54,8 @@ public class NeighbourDetailTest {
     @Test
     public void detailActivity_TextViewNameTest() {
         final int position = 0;
+        // If name empty or changing the name the test fail
+        final String nb_Name = "Caroline";
         mApiService = DI.getNeighbourApiService();
         mNeighbours = mApiService.getNeighbours();
 
@@ -60,13 +63,14 @@ public class NeighbourDetailTest {
         recyclerList.perform(RecyclerViewActions.actionOnItemAtPosition(position, click()));
 
         ViewInteraction detailName = onView( allOf(withId(R.id.detail_Tv_Name), isDisplayed()));
-        detailName.check(matches(withText(mNeighbours.get(position).getName())));
+        detailName.check(matches(withText(nb_Name)));
     }
 
-    // Check if click on detail Fab Favorite add the nieghbour
+    // Check if click on detail Fab Favorite add the neighbour
     @Test
-    public void detailActivity_addToFavoriteTest() {
-        final int position = 0;
+    public void detailActivity_addToFavoriteTest() throws InterruptedException {
+        int position = 1;
+        final String nb_Name = "Jack";
         mApiService = DI.getNeighbourApiService();
         mNeighbours = mApiService.getNeighbours();
 
@@ -80,9 +84,16 @@ public class NeighbourDetailTest {
         backArrow.perform(click());
 
         // tabItem doesn't work ;-)
+        //Wait to see the Neighbours list ;-)
+        Thread.sleep (2000);
         onView( ViewMatchers.withText("Favorites")).perform(ViewActions.click());
-        //Check the neighbour favorite neighbour status in favorites neighbours list
-        Assert.assertTrue(mNeighbours.get(position).getIsFavorite().equals(true));
+
+        //Check the neighbour in favorites neighbours list = "Jack"
+        position = 0;
+        recyclerList.perform(RecyclerViewActions.actionOnItemAtPosition(position, click()));
+
+        ViewInteraction detailName = onView(allOf(withId(R.id.detail_Tv_Name)));
+        detailName.check(matches(withText(nb_Name)));
 
     }
 }
