@@ -9,6 +9,7 @@
 
     <ImageView
         android:id="@+id/detail_Iv_NeighbourAvatar"
+        android:contentDescription="Neighbour Picture"
         android:layout_width="0dp"
         android:layout_height="280dp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -17,6 +18,7 @@
 
      <ImageView
         android:id="@+id/detail_Iv_BackArrow"
+        android:contentDescription="Back Arrow"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
@@ -92,7 +94,7 @@
                             android:layout_below="@id/detail_Tv_Name"
                             android:adjustViewBounds="false"
                             android:cropToPadding="false"
-                            android:layout_marginLeft="@dimen/icon_default_left_margin"
+                            android:layout_marginStart="@dimen/icon_default_left_margin"
                             android:tint="@color/colorAccent"
                             app:srcCompat="@drawable/android_map_marker_icon_50x50" />
 
@@ -101,16 +103,16 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_below="@id/detail_Tv_Name"
-                            android:layout_marginLeft="@dimen/text_cardview_left_margin"
+                            android:layout_marginStart="@dimen/text_cardview_left_margin"
                             android:layout_marginBottom="@dimen/text_cardview_bottom_margin"
-                            android:text="detail_Tv_address"/>
+                            android:text="Detail Tv Address"/>
 
                         <ImageView
                             android:id="@+id/detail_Iv_Phone"
                             android:layout_width="@dimen/icon_detail_wsize"
                             android:layout_height="@dimen/icon_detail_wsize"
                             android:layout_below="@id/detail_Tv_Address"
-                            android:layout_marginLeft="@dimen/icon_default_left_margin"
+                            android:layout_marginStart="@dimen/icon_default_left_margin"
                             android:tint="@color/colorAccent"
                             app:srcCompat="@android:drawable/stat_sys_phone_call"/>
 
@@ -121,14 +123,14 @@
                             android:layout_below="@id/detail_Tv_Address"
                             android:layout_marginLeft="@dimen/text_cardview_left_margin"
                             android:layout_marginBottom="@dimen/text_cardview_bottom_margin"
-                            android:text="tv_tel"/>
+                            android:text="Detail Tv Phone"/>
 
                         <ImageView
                             android:id="@+id/imageView3"
                             android:layout_width="@dimen/icon_detail_wsize"
                             android:layout_height="@dimen/icon_detail_wsize"
                             android:layout_below="@id/detail_Tv_Phone"
-                            android:layout_marginLeft="@dimen/icon_default_left_margin"
+                            android:layout_marginStart="@dimen/icon_default_left_margin"
                             android:tint="@color/colorAccent"
                             app:srcCompat="@drawable/icons8_globe_50" />
 
@@ -139,7 +141,7 @@
                             android:layout_below="@id/detail_Tv_Phone"
                             android:layout_marginLeft="@dimen/text_cardview_left_margin"
                             android:layout_marginBottom="@dimen/text_cardview_bottom_margin"
-                            android:text="tv_tel"/>
+                            android:text="Detail Tv Web"/>
 
                     </RelativeLayout>
 
@@ -169,8 +171,8 @@
                         android:id="@+id/detail_Tv_Aboutme"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginLeft="@dimen/icon_default_left_margin"
-                        android:layout_marginRight="12dp"
+                        android:layout_marginStart="@dimen/icon_default_left_margin"
+                        android:layout_marginEnd="12dp"
                         android:layout_marginBottom="@dimen/text_cardview_bottom_margin"
                         android:text="A Propos de moi"/>
 

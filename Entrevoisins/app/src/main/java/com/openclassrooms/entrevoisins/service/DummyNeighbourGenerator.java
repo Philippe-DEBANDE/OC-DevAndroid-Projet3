@@ -39,16 +39,4 @@ public abstract class DummyNeighbourGenerator {
         return new ArrayList<>(DUMMY_NEIGHBOURS);
     }
 
-
-    // Favorite Neighbours Creation
-
-    public static List<Neighbour> FAVORITE_NEIGHBOURS = Arrays.asList();
-
-    public static List<Neighbour> generateFavoriteNeighbours() {
-        return new ArrayList<>(FAVORITE_NEIGHBOURS);
-    }
-
-
-
-
 }

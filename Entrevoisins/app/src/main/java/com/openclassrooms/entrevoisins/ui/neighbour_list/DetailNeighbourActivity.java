@@ -60,9 +60,10 @@ public class DetailNeighbourActivity extends AppCompatActivity {
                 .centerCrop()
                 .into(detailUserAvatar);
 
-        // Favorite fab initializing
-        //fabFavorite = findViewById(R.id.fabFavorite);
+        // Favorite Button initializing
         setFavoriteButton();
+
+        // Arrow Back Action
         detailIvBack.setOnClickListener(new View.OnClickListener() {
         @Override
         public void onClick(View v) {

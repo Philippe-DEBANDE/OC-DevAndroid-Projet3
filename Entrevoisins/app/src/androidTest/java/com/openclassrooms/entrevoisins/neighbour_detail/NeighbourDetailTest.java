@@ -69,8 +69,9 @@ public class NeighbourDetailTest {
     // Check if click on detail Fab Favorite add the neighbour
     @Test
     public void detailActivity_addToFavoriteTest() throws InterruptedException {
-        int position = 1;
-        final String nb_Name = "Jack";
+        // Don't take the neighbour Jack wich is in myNeighboursList_deleteAction_shouldRemoveItem
+        int position = 3;
+        final String nb_Name = "Vincent";
         mApiService = DI.getNeighbourApiService();
         mNeighbours = mApiService.getNeighbours();
 
@@ -84,11 +85,10 @@ public class NeighbourDetailTest {
         backArrow.perform(click());
 
         // tabItem doesn't work ;-)
-        //Wait to see the Neighbours list ;-)
-        Thread.sleep (2000);
         onView( ViewMatchers.withText("Favorites")).perform(ViewActions.click());
 
-        //Check the neighbour in favorites neighbours list = "Jack"
+        //Check the neighbour in favorites neighbours list = "Vincent"
+        //"Vincent" is at the first position so we need to put this in the position
         position = 0;
         recyclerList.perform(RecyclerViewActions.actionOnItemAtPosition(position, click()));
 

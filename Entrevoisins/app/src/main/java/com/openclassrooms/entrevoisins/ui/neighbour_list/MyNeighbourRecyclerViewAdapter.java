@@ -39,7 +39,6 @@ public class MyNeighbourRecyclerViewAdapter extends RecyclerView.Adapter<MyNeigh
         View view = LayoutInflater.from(parent.getContext())
                 .inflate(R.layout.fragment_neighbour, parent, false);
         return new ViewHolder(view);
-
     }
 
     @Override
@@ -69,8 +68,6 @@ public class MyNeighbourRecyclerViewAdapter extends RecyclerView.Adapter<MyNeigh
                 {
                     // The command to delete the Favorite Neighbour, and the post Event ...
                     //neighbour.setIsFavorite();
-                    //System.out.println("RecyclerView ---> mDeleteButton : L'event envoyé est suppression voisin FAVORI pour "+neighbour.getName());
-                    //EventBus.getDefault().post(new DeleteFavoriteNeighbourEvent(neighbour));
                     text = "Suppression impossible du voisin "+neighbour.getName()+" car elle/il est dans les favoris !!!";
                     Toast toast_Sup_Fav = Toast.makeText(context, text, duration);
                     toast_Sup_Fav.setGravity(Gravity.CENTER_VERTICAL, 0, 0);
@@ -104,8 +101,8 @@ public class MyNeighbourRecyclerViewAdapter extends RecyclerView.Adapter<MyNeigh
         public TextView mNeighbourName;
         @BindView(R.id.item_list_delete_button)
         public ImageButton mDeleteButton;
-        //Add Reclycler view row
-        @BindView(value = R.id.recycler_row)
+        //Add Recycler view row
+        @BindView(R.id.recycler_row)
         public ConstraintLayout mRecycler_item;
 
         public ViewHolder(View view) {
