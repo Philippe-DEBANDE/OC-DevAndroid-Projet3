@@ -45,7 +45,7 @@ public class DetailNeighbourActivity extends AppCompatActivity {
         // Getting the actual Neighbour
         actualNeighbour = DI.getNeighbourApiService().getNeighbours().get(position);
 
-        //Get and put text in findview;
+        //Get and put text in graphic fields :
         detailTvUsername.setText(actualNeighbour.getName());
         detailTvName.setText(actualNeighbour.getName());
         detailTvAdress.setText(actualNeighbour.getAddress());
@@ -75,13 +75,8 @@ public class DetailNeighbourActivity extends AppCompatActivity {
         detailFabFavorite.setOnClickListener(new View.OnClickListener() {
         @Override
         public void onClick(View v) {
-            // Check the neighbour favorite neighbour...
-            if (actualNeighbour.getIsFavorite()) {
-                actualNeighbour.setIsFavorite();
-            }
-            else {
-                actualNeighbour.setIsFavorite();
-            }
+            // Change Neighbour Favorite Status and update button
+            actualNeighbour.setIsFavorite();
             setFavoriteButton();
         }
        });

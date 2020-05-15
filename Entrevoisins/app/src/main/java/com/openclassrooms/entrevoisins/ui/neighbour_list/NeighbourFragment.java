@@ -28,7 +28,6 @@ public class NeighbourFragment extends Fragment {
     private List<Neighbour> mNeighbours;
     private RecyclerView mRecyclerView;
     public boolean filtered;
-    public int tabPosition;
     public MyNeighbourRecyclerViewAdapter mAdapter;
 
     /**
