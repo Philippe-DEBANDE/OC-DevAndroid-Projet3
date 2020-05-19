@@ -30,6 +30,7 @@ import butterknife.ButterKnife;
 public class MyNeighbourRecyclerViewAdapter extends RecyclerView.Adapter<MyNeighbourRecyclerViewAdapter.ViewHolder> {
 
     private final List<Neighbour> mNeighbours;
+    private Integer holderPosition;
 
     public MyNeighbourRecyclerViewAdapter(List<Neighbour> items) { mNeighbours = items; }
 
@@ -44,6 +45,7 @@ public class MyNeighbourRecyclerViewAdapter extends RecyclerView.Adapter<MyNeigh
     @Override
     public void onBindViewHolder(final ViewHolder holder, int position) {
         Neighbour neighbour = mNeighbours.get(position);
+        position=holder.getAdapterPosition();
         holder.mNeighbourName.setText(neighbour.getName());
         Glide.with(holder.mNeighbourAvatar.getContext())
                 .load(neighbour.getAvatarUrl())
@@ -80,9 +82,10 @@ public class MyNeighbourRecyclerViewAdapter extends RecyclerView.Adapter<MyNeigh
         holder.mRecycler_item.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                holderPosition = holder.getAdapterPosition();
                 Intent DetailNeighbourActivity = new Intent(v.getContext(), DetailNeighbourActivity.class);
-                // Add mPosition
-                DetailNeighbourActivity.putExtra("mPosition", DI.getNeighbourApiService().getNeighbours().indexOf(neighbour));
+                // Add mId
+                DetailNeighbourActivity.putExtra("mId", mNeighbours.get(holderPosition).getId());
                 v.getContext().startActivity(DetailNeighbourActivity);
 
             }

@@ -28,8 +28,9 @@ public class DetailNeighbourActivity extends AppCompatActivity {
     @BindView(R.id.detail_Tv_Web)TextView detailTvWeb;
     @BindView(R.id.detail_Tv_Aboutme)TextView detailTvAboutMe;
 
+    //List<Neighbour> neighbours;
     Neighbour actualNeighbour;
-    int position;
+    Long mId;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,10 +41,10 @@ public class DetailNeighbourActivity extends AppCompatActivity {
         //Objects.requireNonNull(getSupportActionBar()).hide();
 
         //Get The User Data From INTENT ---> All other extra get from the 'parent' activity were removed
-        position = getIntent().getIntExtra("mPosition", position);
+        mId = getIntent().getLongExtra("mId",0L);
 
-        // Getting the actual Neighbour
-        actualNeighbour = DI.getNeighbourApiService().getNeighbours().get(position);
+        // Getting the Neighbour with a search on Id and affect him to actualNeighbour
+        findById();
 
         //Get and put text in graphic fields :
         detailTvUsername.setText(actualNeighbour.getName());
@@ -81,6 +82,19 @@ public class DetailNeighbourActivity extends AppCompatActivity {
         }
        });
     }
+
+
+    public Neighbour findById()
+    {
+        for ( Neighbour neighbourToSearch: DI.getNeighbourApiService().getNeighbours()) {
+            if (neighbourToSearch.getId() == (mId)) {
+                actualNeighbour = neighbourToSearch;
+                return actualNeighbour;
+            }
+        }
+        return null;
+    }
+
 
     private void setFavoriteButton() {
         detailFabFavorite.setImageDrawable(actualNeighbour.getIsFavorite() ? getDrawable(R.drawable.ic_star_white_24dp) : getDrawable(R.drawable.ic_star_border_white_24dp));
