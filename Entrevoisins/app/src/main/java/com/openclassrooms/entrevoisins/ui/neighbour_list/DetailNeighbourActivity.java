@@ -28,7 +28,6 @@ public class DetailNeighbourActivity extends AppCompatActivity {
     @BindView(R.id.detail_Tv_Web)TextView detailTvWeb;
     @BindView(R.id.detail_Tv_Aboutme)TextView detailTvAboutMe;
 
-    //List<Neighbour> neighbours;
     Neighbour actualNeighbour;
     Long mId;
 
@@ -83,7 +82,6 @@ public class DetailNeighbourActivity extends AppCompatActivity {
        });
     }
 
-
     public Neighbour findById()
     {
         for ( Neighbour neighbourToSearch: DI.getNeighbourApiService().getNeighbours()) {
@@ -94,7 +92,6 @@ public class DetailNeighbourActivity extends AppCompatActivity {
         }
         return null;
     }
-
 
     private void setFavoriteButton() {
         detailFabFavorite.setImageDrawable(actualNeighbour.getIsFavorite() ? getDrawable(R.drawable.ic_star_white_24dp) : getDrawable(R.drawable.ic_star_border_white_24dp));
